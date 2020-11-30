@@ -1,4 +1,4 @@
-package com.fiberhome.testgroup.freeman.dao;
+package com.fiberhome.testgroup.freeman.mapper;
 
 /**
  * @program: freeman
@@ -6,7 +6,7 @@ package com.fiberhome.testgroup.freeman.dao;
  * @author: tianyq
  * @create: 2020-03-10 18:37
  **/
-public interface InterfaceTestcasesDao {
+public interface ApiTestcasesMapper {
 
 
 

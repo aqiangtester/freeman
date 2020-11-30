@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fiberhome.testgroup.freeman.mapper.EnvMapper">
+
+    <resultMap type="com.fiberhome.testgroup.freeman.entity.EnvEntity" id="envMap">
+        <id column="env_id" property="envId" />
+        <result column="env_name" property="envName" />
+        <result column="env_ip" property="envIp" />
+        <result column="env_port" property="envPort" />
+    </resultMap>
+
+
+    <insert id="insertEnv" parameterType="com.fiberhome.testgroup.freeman.entity.EnvEntity" keyProperty="envId" useGeneratedKeys="true">
+        insert into env(env_name, env_ip, env_port) values (#{envName}, #{envIp}, #{envPort})
+    </insert>
+
+    <update id="updateEnv" parameterType="com.fiberhome.testgroup.freeman.entity.EnvEntity">
+        update env set env_name=#{envName}, env_ip=#{envIp}, env_port=#{envPort} where env_id=#{envId}
+    </update>
+
+    <delete id="deleteEnv" parameterType="String">
+        delete from env where env_id = #{envId}
+    </delete>
+
+    <select id="getEnvByEnvName" resultType="com.fiberhome.testgroup.freeman.entity.EnvEntity" parameterType="String" resultMap="envMap">
+        select * from env where env_name = #{envName}
+    </select>
+
+    <select id="getEnvByEnvId" resultType="com.fiberhome.testgroup.freeman.entity.EnvEntity" parameterType="String" resultMap="envMap">
+        select * from env where env_id = #{envId}
+    </select>
+
+</mapper>

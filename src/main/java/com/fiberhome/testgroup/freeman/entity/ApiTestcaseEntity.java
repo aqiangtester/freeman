@@ -7,7 +7,7 @@ package com.fiberhome.testgroup.freeman.entity;
  * @create: 2020-03-10 17:54
  **/
 
-public class InterfaceTestcase {
+public class ApiTestcaseEntity {
 
     private Integer id;
     private String title;
@@ -15,10 +15,10 @@ public class InterfaceTestcase {
     private String requestParams;
     private String requestBody;
 
-    public InterfaceTestcase() {
+    public ApiTestcaseEntity() {
     }
 
-    public InterfaceTestcase(Integer id, String title, String url, String requestParams, String requestBody) {
+    public ApiTestcaseEntity(Integer id, String title, String url, String requestParams, String requestBody) {
         this.id = id;
         this.title = title;
         this.url = url;
@@ -28,7 +28,7 @@ public class InterfaceTestcase {
 
     @Override
     public String toString() {
-        return "InterfaceTestcase{" +
+        return "ApiTestcaseEntity{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", url='" + url + '\'' +

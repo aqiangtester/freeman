@@ -2,6 +2,9 @@ package com.fiberhome.testgroup.freeman.response;
 
 import com.fiberhome.testgroup.freeman.constant.ResponseCode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @program: freeman
  * @description: 统一的响应结果封装
@@ -16,10 +19,10 @@ public class ResponseData {
 
     /**
      *
-     * @return  操作成功返回的data，data为空
+     * @return  操作成功返回data为空
      */
     public static ResponseData success(){
-        return new ResponseData(null);
+        return new ResponseData();
     }
 
     /**
@@ -53,6 +56,8 @@ public class ResponseData {
     }
 
     public ResponseData() {
+        this.code = ResponseCode.SUCCESS.getCode();
+        this.message = ResponseCode.SUCCESS.getMessage();
     }
 
     public ResponseData(Object data) {
@@ -64,6 +69,7 @@ public class ResponseData {
     public ResponseData(Integer code, String message) {
         this.code = code;
         this.message = message;
+        this.data = new ArrayList<>();
     }
 
     public ResponseData(Integer code, String message, Object data) {

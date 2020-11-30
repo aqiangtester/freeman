@@ -13,7 +13,7 @@ public class SendHttpRequestEntity {
     private String httpType;
     private String ip;
     private String uri;
-    private Map<String, Object> postParams;
+    private Map<String, Object> requestParams;
 
     @Override
     public String toString() {
@@ -22,7 +22,7 @@ public class SendHttpRequestEntity {
                 ", httpType='" + httpType + '\'' +
                 ", ip='" + ip + '\'' +
                 ", uri='" + uri + '\'' +
-                ", postParams=" + postParams +
+                ", requestParams=" + requestParams +
                 '}';
     }
 
@@ -58,19 +58,19 @@ public class SendHttpRequestEntity {
         this.uri = uri;
     }
 
-    public Map<String, Object> getPostParams() {
-        return postParams;
+    public Map<String, Object> getRequestParams() {
+        return requestParams;
     }
 
-    public void setPostParams(Map<String, Object> postParams) {
-        this.postParams = postParams;
+    public void setRequestParams(Map<String, Object> requestParams) {
+        this.requestParams = requestParams;
     }
 
-    public SendHttpRequestEntity(String title, String httpType, String ip, String uri, Map<String, Object> postParams) {
+    public SendHttpRequestEntity(String title, String httpType, String ip, String uri, Map<String, Object> requestParams) {
         this.title = title;
         this.httpType = httpType;
         this.ip = ip;
         this.uri = uri;
-        this.postParams = postParams;
+        this.requestParams = requestParams;
     }
 }
